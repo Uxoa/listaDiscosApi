@@ -15,4 +15,16 @@ public class Disco {
     @Column(name = "nombreDisco")
     private String nombreDisco;
     
+    public Disco(Long id, String nombreDisco) {
+        this.id = id;
+        this.nombreDisco = nombreDisco;
+    }
+    
+    public Long getId() {
+        return id;
+    }
+    
+    public String getNombreDisco() {
+        return nombreDisco;
+    }
 }
