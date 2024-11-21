@@ -9,18 +9,32 @@ import java.util.List;
 @RequestMapping("/api/discos")
 public class DiscoControlador {
     
-   @Autowired
-   public DiscoRepositorio discoRepositorio;
-   
-   @PostMapping
-   public Disco crearDisco(@RequestBody Disco disco){
-       this.discoRepositorio.save(disco);
-       return disco;
-   }
-
-   @GetMapping
-   public List<Disco> verTodosLosDiscos(){
-       return discoRepositorio.findAll();
-        }
-
+    @Autowired
+    public DiscoRepositorio discoRepositorio;
+    
+    @PostMapping
+    public Disco crearDisco(@RequestBody Disco disco){
+        this.discoRepositorio.save(disco);
+        return disco;
+    }
+    
+    @GetMapping
+    public List<Disco> verTodosLosDiscos(@PathVariable Long id){
+        this.discoRepositorio.findAll();
+        return (List<Disco>) discoRepositorio;
+    }
+    
+    @GetMapping("{id}")
+    public Disco buscarDiscoPorId(){
+        
+        return null;
+    }
+    
+    @DeleteMapping("{id}")
+    public void borrarDiscoPorId(@PathVariable Long id){
+        this.discoRepositorio.deleteById(id);
+    }
+    
+    
+    
 }
