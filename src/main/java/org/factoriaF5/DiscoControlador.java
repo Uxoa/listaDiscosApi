@@ -3,6 +3,8 @@ package org.factoriaF5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/discos")
 public class DiscoControlador {
@@ -16,9 +18,9 @@ public class DiscoControlador {
        return disco;
    }
 
-   @GetMapping("{id}")
-   public Disco verTodosLosDiscos(@PathVariable Long id){
-       return null;
-   }
+   @GetMapping
+   public List<Disco> verTodosLosDiscos(){
+       return discoRepositorio.findAll();
+        }
 
 }
