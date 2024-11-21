@@ -14,10 +14,12 @@ public class Disco {
     
     @Column(name = "nombreDisco")
     private String nombreDisco;
+    private String artista;
     
-    public Disco(Long id, String nombreDisco) {
+    public Disco(Long id, String nombreDisco, String artista) {
         this.id = id;
         this.nombreDisco = nombreDisco;
+        this.artista = artista;
     }
     
     public Long getId() {
@@ -26,5 +28,9 @@ public class Disco {
     
     public String getNombreDisco() {
         return nombreDisco;
+    }
+    
+    public String getArtista(){
+        return artista;
     }
 }

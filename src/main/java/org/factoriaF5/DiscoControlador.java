@@ -16,5 +16,9 @@ public class DiscoControlador {
        return disco;
    }
 
+   @GetMapping("{id}")
+   public Disco verTodosLosDiscos(@PathVariable Long id){
+       return null;
+   }
 
 }
